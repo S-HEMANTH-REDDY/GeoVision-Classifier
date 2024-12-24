@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Cene
+{% endblock %}
+
+{% block content %}
+
+<nav>
+    <div class="nav-left">
+        <a href="/">Cene</a>
+    </div>
+    <div class="nav-right">
+        <form action="/sort" method="post">
+           <input class="button" type="submit" value="SORT PHOTOS">
+        </form>
+    </div>
+</nav>
+<div class="nav-margin"></div>
+
+
+<div class="img-mosaic">
+    {% for image in images %}
+        <div class="img-tile" style="background-image: url({{image}})"></div>
+    {% endfor %}
+</div>
+
+{% endblock %}
